@@ -294,7 +294,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2018/05/08/Vue.js中侦听器watch 的高级用法/" itemprop="url">
-                  Untitled
+                  Vue.js中 watch 的高级用法
                 </a>
               
             
@@ -320,7 +320,7 @@
                 
               
 
-              <time title="创建于: 2018-05-08 09:59:45 / 修改于: 10:25:14" itemprop="dateCreated datePublished" datetime="2018-05-08T09:59:45+08:00">2018-05-08</time>
+              <time title="创建于: 2018-05-08 09:59:45 / 修改于: 10:30:46" itemprop="dateCreated datePublished" datetime="2018-05-08T09:59:45+08:00">2018-05-08</time>
             
 
             
@@ -360,7 +360,7 @@
       
         
           
-            <h1 id="Vue-js中-watch-的高级用法"><a href="#Vue-js中-watch-的高级用法" class="headerlink" title="Vue.js中 watch 的高级用法"></a>Vue.js中 watch 的高级用法</h1><p>假设有如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">      &lt;p&gt;FullName: &#123;&#123;fullName&#125;&#125; &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;FirstName: &lt;input type=&quot;text&quot; v-model=&quot;firstName&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#root&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: &apos;Dawei&apos;,</span><br><span class="line">    lastName: &apos;Lou&apos;,</span><br><span class="line">    fullName: &apos;&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName(newName, oldName) &#123;</span><br><span class="line">      this.fullName = newName + &apos; &apos; + this.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+            <p>假设有如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">      &lt;p&gt;FullName: &#123;&#123;fullName&#125;&#125; &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;FirstName: &lt;input type=&quot;text&quot; v-model=&quot;firstName&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#root&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: &apos;Dawei&apos;,</span><br><span class="line">    lastName: &apos;Lou&apos;,</span><br><span class="line">    fullName: &apos;&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName(newName, oldName) &#123;</span><br><span class="line">      this.fullName = newName + &apos; &apos; + this.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>上面的代码的效果是，当我们输入<strong>firstName</strong>后，<strong>wacth</strong>监听每次修改变化的新值，然后计算输出<strong>fullName</strong>。</p>
 <p>##handler方法和immediate属性</p>
 <hr>
